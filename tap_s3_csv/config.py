@@ -36,7 +36,7 @@ def load(filename):
     try:
         with open(filename) as handle:
             config = json.load(handle)
-            if not isinstance(config['tables'], dict)
+            if not isinstance(config['tables'], dict):
                 config['tables'] = json.loads(config['tables'])
     except:
         logger.fatal("Failed to decode config file. Is it valid json?")
