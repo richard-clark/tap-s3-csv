@@ -10,6 +10,8 @@ CONFIG_CONTRACT = Schema({
     Required('bucket'): str,
     Optional('product'): str,
     Optional('image_version'): str,
+    Optional('format'): str,
+    Optional('customFrequencyInMinutes'): str,
     Required('tables'): [{
         Required('name'): str,
         Required('pattern'): str,
@@ -37,6 +39,7 @@ def load(filename):
     try:
         with open(filename) as handle:
             config = json.load(handle)
+            print(config)
             if not isinstance(config['tables'], dict):
                 config['tables'] = json.loads(config['tables'])
     except:
