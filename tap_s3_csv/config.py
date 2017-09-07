@@ -12,6 +12,7 @@ CONFIG_CONTRACT = Schema({
     Optional('image_version'): str,
     Optional('format'): str,
     Optional('customFrequencyInMinutes'): str,
+    Optional('user_agent'): str,
     Required('tables'): [{
         Required('name'): str,
         Required('pattern'): str,
