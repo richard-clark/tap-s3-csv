@@ -9,6 +9,7 @@ CONFIG_CONTRACT = Schema({
     Required('start_date'): str,
     Required('bucket'): str,
     Optional('product'): str,
+    Optional('image_version'): str,
     Required('tables'): [{
         Required('name'): str,
         Required('pattern'): str,
