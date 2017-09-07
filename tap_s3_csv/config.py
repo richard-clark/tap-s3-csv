@@ -8,6 +8,7 @@ CONFIG_CONTRACT = Schema({
     Required('aws_secret_access_key'): str,
     Required('start_date'): str,
     Required('bucket'): str,
+    Optional('product'): str,
     Required('tables'): [{
         Required('name'): str,
         Required('pattern'): str,
@@ -35,6 +36,7 @@ def load(filename):
     try:
         with open(filename) as handle:
             config = json.load(handle)
+            config['tables'] = json.loads(config.tables)
     except:
         logger.fatal("Failed to decode config file. Is it valid json?")
         raise RuntimeError
