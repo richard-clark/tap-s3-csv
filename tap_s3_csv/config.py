@@ -40,7 +40,6 @@ def load(filename):
     try:
         with open(filename) as handle:
             config = json.load(handle)
-            print(config)
             if not isinstance(config['tables'], dict):
                 config['tables'] = json.loads(config['tables'])
     except:
